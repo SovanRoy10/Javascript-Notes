@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dom Learning</title>
+
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color : white;
+        }
+    </style>
+
+</head>
+<body class="bg-black">
+    
+        <div>
+            <h1 class="heading" id="title">DOM learning <span style="display : none;">test text</span></h1>
+
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, alias?</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, alias?</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, alias?</h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos neque repellat unde est. Voluptates officia ipsum totam ipsam ipsa debitis consectetur? Suscipit facilis quasi quas nihil dicta, dolore labore eaque.</p>
+
+
+            <ul>
+                <li class="listItem">one</li>
+                <li class="listItem">two</li>
+                <li class="listItem">three</li>
+                <li class="listItem">four</li>
+            </ul>
+
+            <input type="password">
+        </div>
+
+
+        <script>
+
+            console.log(document.getElementById('title'))
+
+            console.log(document.getElementById('title').id)
+
+            console.log(document.getElementById('title').className)
+
+            console.log(document.getElementById('title').getAttribute('id'))
+
+            console.log(document.getElementById('title').getAttribute('class'))
+
+            console.log(document.getElementById('title').setAttribute('class','test'))
+
+            console.log(document.getElementById('title').setAttribute('class','test heading'))
+
+            const title = document.getElementById('title')
+
+            title.style.backgroundColor ="green"
+            title.style.borderRadius = "15px"
+            title.style.padding = "15px"
+
+            console.log(title.textContent) // complete text 
+            console.log(title.innerText)  
+            console.log(title.innerHTML)  
+
+            console.log(document.getElementsByClassName('heading'))
+
+            console.log(document.querySelector('h1'))
+
+            console.log(document.querySelector('#title'))
+
+            console.log(document.querySelector('.heading'))
+
+            console.log(document.querySelector('input[type="password"]'))
+
+            console.log(document.querySelector('ul'))
+
+            const myul = document.querySelector('ul')
+
+          const turnGreen  =  myul.querySelector('li')
+
+          turnGreen.style.backgroundColor = "green"
+          turnGreen.style.padding = "10px"
+          turnGreen.innerText  = "it is inner text"
+
+          console.log(myul.querySelectorAll('li'))
+
+          const tempList  = myul.querySelectorAll('li');  // nodelist , it is not array
+
+          tempList[1].style.backgroundColor = "blue"
+
+          const myH1 = document.querySelectorAll('h1')
+          myH1[1].style.color = "green"
+
+          myH1.forEach((item,index)=>{
+            if(index!=0)
+            item.style.color = "lightgreen"
+          })
+
+          console.log(document.getElementsByClassName('listItem'))
+
+          // we have to convert the HTMLcollection into array by using Array.from()
+
+          const tempClassList = Array.from(document.getElementsByClassName('listItem'))
+
+          console.log(tempClassList)
+
+          tempClassList.forEach((el)=>(
+            el.style.color = 'yellow'
+          ))
+ 
+        </script>
+
+</body>
+</html>
+
+
+
+
+<!-- document.baseURL  -->
+
+<!-- document.links  -->
+
+<!-- document.getElementById("firstHeading"); -->
+
+<!-- document.getElementById("firstHeading").innerHTML = "<h1>Sovan Roy</h1>"; -->
